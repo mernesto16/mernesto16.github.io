@@ -75,3 +75,14 @@ var finalize =  function (key, reduced) {
 }
 ```
 This will return the two closest cities. 
+The code that connects the program to the Mongo database and queries the program is as follows:
+
+``` Python
+ db.cities.mapReduce(mapCode, reduceCode, 
+   { query: {CountryID: { $ne: 254 }},
+   out: "farthest",
+   finalize: finalize})
+   
+db.farthest.find().forEach(printjson)
+```
+
