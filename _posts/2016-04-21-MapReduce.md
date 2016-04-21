@@ -1,8 +1,8 @@
 ---
 layout: page
-permalink: /postgres/
+permalink: /mongo/
 color: deep-purple
-title:  "Postgres"
+title:  "Mongo"
 date:   2016-04-20
 ---
 
