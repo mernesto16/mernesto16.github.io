@@ -26,6 +26,7 @@ var mapCode = function() {
 ```
 
 Next you have to go through those stacks and reduce them:
+
 ``` Python
 var reduceCode = function(key, values) {
 
@@ -41,6 +42,7 @@ var reduceCode = function(key, values) {
 }
 ```
 The final step is to actually query them to find the result you are searching for. 
+
 ``` Python
 var finalize =  function (key, reduced) {
 
