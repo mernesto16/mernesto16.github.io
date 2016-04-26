@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Rate My History"
-permalink: /rate/
+permalink: /RateMyHistory/
 date: 2016-04-26 10:00:00
 color: green
 ---
