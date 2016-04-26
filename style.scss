@@ -1,430 +1,285 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
-@charset "utf-8";
 
+//
+// IMPORTS
+//
 
+@import "_reset";
+@import "_variables";
+// Syntax highlighting @import is at the bottom of this file
 
-// Width of the content area
-$content-width:    700px;
+/**************/
+/* BASE RULES */
+/**************/
 
-
-
-// Using media queries with like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+html {
+  font-size: 100%;
 }
-
-
-
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "colors",
-        "mui",
-        "syntax-highlighting"
-;
 
 body {
-    padding-top: 93px;
+	background: $white;
+  font: 18px/1.4 $helvetica;
+  color: $darkGray;
 }
 
-i.fa {
-    margin-right: 5px;
+.container {
+  margin: 0 auto;
+  max-width: 740px;
+  padding: 0 10px;
+  width: 100%;
 }
 
-.mui-container {
-    max-width: 800px;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $helveticaNeue;
+  color: $darkerGray;
+  font-weight: bold;
+  
+  line-height: 1.7;
+  margin: 1em 0 15px;
+  padding: 0;
+
+  @include mobile {
+    line-height: 1.4;
+  }
+}
+  
+h1 {  
+  font-size: 30px;
+  a {
+    color: inherit;
+  }
 }
 
-.site-appbar {
-    background-color: mui-color("indigo", "500");
-    left: 0;
-    margin-bottom: 15px;
-    overflow: auto;
-    padding-left: 10px;
-    padding-top: 10px;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 6;
+h2 {  
+  font-size: 24px;
 }
 
-.site-nav {
-    float: right;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li {
-        display: inline-block;
-
-        a {
-            color: #fff;
-        }
-    }
+h3 {  
+  font-size: 20px;
 }
 
-.mui-container-fluid {
-    &.post-content {
-        margin: 0 auto;
-        max-width: $content-width;
-    }
-
-    img {
-        display: block;
-        max-width: 100%;
-    }
+h4 {  
+  font-size: 18px;
+  color: $gray;
 }
 
-.post-meta {
-    font-size: 18px;
-    font-weight: bold;
+p {
+  margin: 15px 0;
 }
 
-.sharer {
-    float: right;
-
-    .sh-fb {
-        color: #4A65A0;
-    }
-    .sh-twt {
-        color: #0088cc;
-    }
+a {
+  color: $blue;
+  text-decoration: none;
+	cursor: pointer;
+  &:hover, &:active {
+    color: $blue;
+  }
 }
 
-.post-content {
-    position: relative;
-    top: 135px;
-    z-index: 3;
-
-    .post-meta {
-        padding: 10px 0 10px 5px;
-    }
-
-    .article-title {
-        font-size: 45px;
-        font-weight: bold;
-        line-height: 50px;
-        padding-bottom: 10px;
-        transition: all 0.3s ease-in;
-
-        a {
-            color: #111;
-
-            &:hover {
-                color: #08c;
-                text-decoration: none;
-            }
-        }
-    }
+ul, ol {
+  margin: 15px 0;
+  padding-left: 30px;
 }
 
-.site-title {
-
-    h1 {
-        color: #FFF;
-        display: inline-block;
-        margin: 0;
-    }
+ul {
+  list-style-type: disc;
 }
 
-.post-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    padding-top: 15px;
+ol {
+  list-style-type: decimal;
 }
 
-.post-data {
-    padding: 15px;
+ol ul, ul ol, ul ul, ol ol {
+  margin: 0;
 }
 
-article {
-    &.mui-panel {
-        padding: 0px;
-    }
+ul ul, ol ul {
+  list-style-type: circle;
 }
 
-.mui-panel {
-    .post-list-title {
-        margin-top: 0;
-    }
+em, i {
+  font-style: italic;
 }
 
-
-.bg-holder {
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
-    background-color: mui-color('blue-grey', '500');
-    background-size: cover;
-    min-height: 180px;
-    position: relative;
-
-    a {
-        color: #fff;
-
-        &.overlay {
-            bottom: 0;
-            color: #fff;
-            display: block;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-            z-index: 4;
-        }
-    }
-
-    .img-overlay {
-        bottom: 0;
-        background-color: #000;
-        display: block;
-        left: 0;
-        opacity: 0.5;
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 2;
-    }
-
-    h2 {
-        bottom: 15px;
-        font-size: 34px;
-        font-weight: bold;
-        left: 15px;
-        line-height: 40px;
-        right: 15px;
-        margin: 0;
-        position: absolute;
-        z-index: 3;
-    }
+strong, b {
+  font-weight: bold;
 }
 
-.post-full {
-    position: relative;
-
-    .bg-holder {
-        left: 0;
-        min-height: 250px;
-        position: fixed;
-        right: 0;
-        top: 0;
-
-        h1 {
-            bottom: 25px;
-            line-height: 50px;
-        }
-
-        a.overlay {
-            position: fixed;
-            background: #414040;
-            padding: 5px;
-            top: 15px;
-            left: 15px;
-            bottom: initial;
-            right: initial;
-            border-radius: 2px;
-
-            i {
-                margin: 0;
-            }
-        }
-
-        a:hover {
-            text-decoration : none;
-        }
-    }
+img {
+  max-width: 100%;
 }
 
-.post-excerpt {
+.date {
+  font-style: italic;
+  color: $gray;
+}
+
+// Specify the color of the selection
+::-moz-selection {
+  color: $black;
+  background: $lightGray;
+}
+::selection {
+  color: $black;
+  background: $lightGray;
+}
+
+// Nicolas Gallagher's micro clearfix hack
+// http://nicolasgallagher.com/micro-clearfix-hack/
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*********************/
+/* LAYOUT / SECTIONS */
+/*********************/
+
+//
+// .masthead
+//
+
+.wrapper-masthead {
+  margin-bottom: 50px;
+}
+
+.masthead {
+  padding: 20px 0;
+  border-bottom: 1px solid $lightGray;
+  
+  @include mobile {
+    text-align: center;
+  }
+}
+
+.site-avatar {
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin-right: 15px;
+
+  @include mobile {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  img {
+    border-radius: 5px;
+  }
+}
+
+.site-info {
+  float: left;
+
+  @include mobile {
+    float: none;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.site-name {
+  margin: 0;
+  color: $darkGray;
+  cursor: pointer;
+  font-family: $helveticaNeue; 
+  font-weight: 300;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.site-description {
+  margin: -5px 0 0 0;
+  color: $gray;
+  font-size: 16px;
+  
+  @include mobile {
+    margin: 3px 0;
+  }
+}
+
+nav {
+  float: right;
+  margin-top: 23px; // @TODO: Vertically middle align
+  font-family: $helveticaNeue; 
+  font-size: 18px;
+  
+  @include mobile {
+    float: none;
+    margin-top: 9px;
+    display: block;
     font-size: 16px;
-}
-.post-tag {
-    background-color: mui-color('indigo','400');
-    color: #fff;
-    display: inline-block;
-    margin-bottom: 1px;
-    padding: 2px 4px;
+  }
+
+  a {
+    margin-left: 20px;
+    color: $darkGray;
+    text-align: right;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-decoration: underline;
+    font-size: 100px;
+
+    @include mobile {
+      margin: 0 10px;
+      color: $blue;
+    }
+  }
 }
 
-.post-page {
-    h1 {
-        bottom: 15px;
-        font-size: 48px;
-        font-weight: bold;
-        left: 0;
-        margin: 0;
-        position: absolute;
-        text-align: center;
-        width: 100%;
-        z-index: 3;
-    }
+//
+// .main
+//
+
+.posts > .post {
+  padding-bottom: 2em;
+  border-bottom: 1px solid $lightGray;
 }
 
-.post-html {
-    border-top: 1px solid mui-color('blue-grey','400');
-    font-size: 18px;
-    padding-top: 20px;
-
-    p {
-        margin-bottom: 20px;
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: bold;
-    }
-    pre {
-        @extend .mui-panel;
-
-        code {
-            color: initial;
-        }
-    }
-    code {
-        color: mui-color('red', '500');
-    }
-
-    blockquote {
-        border-left: 2px solid mui-color('teal', '400');
-        margin: 0;
-        padding-left: 15px;
-    }
-    img {
-        width: 100%;
-    }
+.posts > .post:last-child {
+  padding-bottom: 1em;
+  border-bottom: none;
 }
 
-article {
-    footer {
-        border-top: 1px solid mui-color('grey', '500');
-        font-size: 18px;
-        padding: 20px 0;
-        text-align: center;
-    }
+.post { 
+  blockquote {
+    margin: 1.8em .8em;
+    border-left: 2px solid $gray;
+    padding: 0.1em 1em;
+    color: $gray;
+    font-size: 22px;
+    font-style: italic;
+  }
+
+  .comments {
+    margin-top: 10px;
+  }
+
+  .read-more {
+    text-transform: uppercase;
+    font-size: 15px;
+  }
 }
 
-.paginator {
-    text-align: center;
-}
-.about-links {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    .mui-btn {
-        display: block;
-        text-align: left;
-    }
-}
-.site-footer {
-    text-align: center;
+.wrapper-footer {
+  margin-top: 50px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: $lightGray;
 }
 
-.bg-grey {
-    background-color: mui-color('grey', '500');
-}
-.bg-orange {
-    background-color: mui-color('orange', '500');
-    a {
-        color: #000;
-    }
-}
-.bg-yellow {
-    background-color: mui-color('yellow', '500');
-    a {
-        color: #000;
-    }
-}
-.bg-amber {
-    background-color: mui-color('amber', '500');
-    a {
-        color: #000;
-    }
-}
-.bg-light-blue {
-    background-color: mui-color('light-blue', '500');
-}
-.bg-lime {
-    background-color: mui-color('lime', '500');
-    a {
-        color: #000;
-    }
-}
-.bg-teal {
-    background-color: mui-color('teal', '500');
-}
-.bg-blue {
-    background-color: mui-color('blue', '500');
-}
-.bg-black-87 {
-    background-color: mui-color('black-alpha-87');
-}
-.bg-blue-grey {
-    background-color: mui-color('blue-grey', '500');
-}
-.bg-brown {
-    background-color: mui-color('brown', '500');
-}
-.bg-indigo {
-    background-color: mui-color('indigo', '500');
-}
-.bg-purple {
-    background-color: mui-color('purple', '500');
-}
-.bg-deep-purple {
-    background-color: mui-color('deep-purple', '500');
-}
-.bg-red {
-    background-color: mui-color('red', '500');
-}
-.bg-pink {
-    background-color: mui-color('pink', '500');
+footer {
+  padding: 20px 0;
+  text-align: center;
 }
 
-@media (max-width: 767px) {
-    .bg-holder {
-        h2 {
-            font-size: 25px;
-        }
-    }
-    .post-full {
-        .bg-holder {
-            min-height: 200px;
-
-            h1 {
-                bottom: 15px;
-                font-size: 32px;
-                line-height: 32px;
-            }
-            a.overlay {
-                left: initial;
-                right: 15px;
-            }
-        }
-    }
-    .sharer {
-        display: block;
-        float: none;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        padding-top: 82px;
-    }
-
-    .post-full {
-        .bg-holder {
-            min-height: 300px;
-        }
-    }
-}
+// Settled on moving the import of syntax highlighting to the bottom of the CSS
+// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+@import "_highlights";
