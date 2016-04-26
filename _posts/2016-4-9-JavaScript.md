@@ -2,7 +2,7 @@
 layout: page
 title: JavaScript
 permalink: /JavaScript/
-color: blue
+color: blue-grey
 ---
 
 JavaScirpt was pretty hard for me to grasp this semester. One of the problems I found was that it was to forgiving of a scripting language. By this I mean that it would allow functions to run even if they weren’t written as well as they could be. This would cause confusion and also slow down processing speeds. The main way we used JavaScript this semester was when creating a login in ability to a website. The most confusing Java Script code that I developed was the one for searching for something specified by a user. 
