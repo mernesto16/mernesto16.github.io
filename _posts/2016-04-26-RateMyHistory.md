@@ -70,4 +70,4 @@ INSERT INTO people (Name, Birth, Death, Description, Views) Values
 ('Martin Luther King, Jr.', '1929-1-15', '1968-4-4', 'Baptist minister and Civil Rights activist who started the Movement in the mid-1950s in the United States. Spoke the infamous "I Have a Dream" speech on the steps of the Washington Monument in Washington, D.C. on August 28, 1963. Talked with E.D. Nixon and other NAACP leaders about Rosa Parks and her arrest and organized a citywide bus boycott. John F. Kennedy phone called Coretta Scott King when Martin Luther King, Jr. was in jail. Was assassinated by James Earl Ray on April 4, 1968.', 0);
 
 ```
-
+I found this project to be a great team building exercise. It allowed everyone to simultaneously edit and add code using Github capabilities. This was difficult because everyone had different coding styles and techniques, but it was fun challenge to try to merge those techniques in a cohesive manner.  
